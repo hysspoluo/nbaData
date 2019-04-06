@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 import time
 import os
 import os.path
+import sqlite3
 
 first_link = "http://nba.win007.com"
 #result = {"type":"","time":"","home":"","result":"","guest":"","handicap":"","totle":"","analysis_link":"","euro_link":""}
@@ -54,8 +55,25 @@ def analysishtml(txtName):
         result_list.append(result)
     for one in result_list:
         print(one)
+
+def createTables(teamlist):
+    conn = sqlite3.connect('nba.db')
+    print("连接数据库，没有则新建")
+    cursor = conn.cursor()
+    for team in teamlist:
+        createtableString = 'create table if not exists "%s" (id int primary key,type text,' \
+                            'time text,home text,result text,guest text,handicap text,' \
+                            'totle text,analysis_Link text,euro_Link text)'%(team)
+        cursor.execute(createtableString)
+    cursor.close()
+    conn.commit()
+    conn.close()
+
+
+
 if __name__=='__main__':
     #开始程序
+    createTables(teamList)
     myDriver = webdriver.Chrome()
     #time.sleep(5)
     myDriver.get(seasonLink)
