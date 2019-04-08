@@ -22,6 +22,7 @@ teamList = {"灰熊","篮网","掘金","老鹰","开拓者","火箭",
             "步行者","76人","快船","公牛","魔术","活塞",
             "黄蜂","森林狼","热火","独行侠","奇才","勇士"}
 
+
 def htmlwriteinTxt(pageSource,txtName):
     fp = open(txtName, "w",encoding='utf-8')
     fp.write(pageSource)
@@ -134,6 +135,9 @@ if __name__=='__main__':
     #分析文件,写入数据库
     analysishtml("灰熊.html")
     '''
+
+#######################################
+#老子敲了几个注释
 
     #for team in teamList:
      #   teamNameFile = team+".html"
