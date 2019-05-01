@@ -99,10 +99,12 @@ def writeIntoDatabase(Schedule_List,teamName):
 
 
 
+
+
 if __name__=='__main__':
     #开始程序
 
-    createTables(teamList)
+    #抓取数据
     '''
     myDriver = webdriver.Chrome()
     #time.sleep(5)
@@ -132,12 +134,12 @@ if __name__=='__main__':
             htmlwriteinTxt(teamHtml,txtName)
             #time.sleep(3)
         optionNum += 1
-    #分析文件,写入数据库
-    analysishtml("灰熊.html")
+   
     '''
-
+    # 创建球队的表，每个表有球队这个赛季的所有赛程
+    createTables(teamList)
 #######################################
-######老子敲了几个注释####用来测试用的##
+######老子敲了几个注释####用来测试用的##这个是上传测试##
 
     #for team in teamList:
      #   teamNameFile = team+".html"
