@@ -21,7 +21,7 @@ teamList = {"灰熊","篮网","掘金","老鹰","开拓者","火箭",
             "黄蜂","森林狼","热火","独行侠","奇才","勇士"}
 
 #分析获取的网页信息，并反馈该对的所有比赛Schedule_List,每场比赛是一条数据
-def analysishtml(teamHtml):
+def analysishtmlanalysishtml(teamHtml):
     soup = BeautifulSoup(open(teamHtml,"r",encoding='utf-8'),'html.parser')
     table = soup.find("table",id="scheTab")
     trs = table.find_all("tr")

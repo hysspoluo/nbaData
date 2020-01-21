@@ -9,13 +9,13 @@ import os.path
 from htmlManager import * #网页及文件分析模块
 from dataBaseManager import *
 #命令设置
-command = 1
+command = 0
 
 first_link = "http://nba.win007.com"
 #result = {"type":"","time":"","home":"","result":"","guest":"","handicap":"","totle":"","analysis_link":"","euro_link":""}
 
 #import time
-seasonLink = "http://nba.win007.com/cn/Normal.aspx?matchSeason=2018-2019"
+seasonLink = "http://nba.win007.com/cn/Normal.aspx?matchSeason=2017-2018&SclassID=1"
 workPath = os.getcwd()
 teamList = {"灰熊","篮网","掘金","老鹰","开拓者","火箭",
             "湖人","骑士","凯尔特人","太阳","马刺","尼克斯",
